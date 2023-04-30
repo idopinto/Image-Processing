@@ -79,14 +79,9 @@ def change_samples(filename, ratio):
         :return: 1D nd array of dtype float64 representing the new sample points
     """
     sr, audio_data = wavfile.read(filename)
-    print(sr)
-    print(audio_data)
-    print(len(audio_data))
     if ratio == 1:
         return audio_data
     resized_audio = np.real(resize(audio_data, ratio)).astype(np.int16)
-    print(resized_audio)
-    print(len(resized_audio))
     wavfile.write("change_samples.wav", sr, resized_audio)
     return resized_audio
 
