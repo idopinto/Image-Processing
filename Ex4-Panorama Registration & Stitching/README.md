@@ -1,5 +1,2 @@
-idopinto12 
-my_panorama.py
-sol4.py
-sol4_utils.py
-campus.mp4
+# Panorama Registration & Stitching
+## Exercise 4| Image Processing @ HUJI
