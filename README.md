@@ -11,7 +11,7 @@ scipy==1.9.3
 ```
 
 
-### [Image Equalization & Quantization](https://github.com/idopinto/Image-Processing/tree/main/Ex1-ImageEqualization&Quantization/README.md)
+### [Image Equalization & Quantization](https://github.com/idopinto/Image-Processing/tree/98c954f13d32afb305705849c4d0e9edfedc8cdd/Ex1-Image%20Equalization%20%26%20Quantization#readme)
 
 
 [Fourier Transform & Convolution](Ex2-Fourier Transform & Convolution/README.md)
