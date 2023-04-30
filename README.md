@@ -10,7 +10,8 @@ scikit-image
 scipy==1.9.3
 ```
 
-[Image Equalization & Quantization](https://github.com/idopinto/Image-Processing/blob/main/README.md)
+
+### [Image Equalization & Quantization](https://github.com/idopinto/Image-Processing/tree/main/Ex1-ImageEqualization&Quantization/README.md)
 
 
 [Fourier Transform & Convolution](Ex2-Fourier Transform & Convolution/README.md)
