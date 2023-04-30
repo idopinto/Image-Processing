@@ -1,2 +1,2 @@
-idopinto12
-sol2.py
+# Fourier Transform & Convolution
+## Exercise 2 | Image Processing @ HUJI
