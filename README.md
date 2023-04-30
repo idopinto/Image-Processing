@@ -1,7 +1,7 @@
 # Image-Processing-
 Image-Processing course exercises @ HUJI
 
-## requirements.txt
+## Requirements
 ```
 numpy==1.23.4
 matplotlib==3.6.1
