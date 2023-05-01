@@ -4,6 +4,7 @@ from scipy.ndimage.interpolation import map_coordinates
 from scipy.io import wavfile
 import imageio as iio
 from skimage.color import rgb2gray
+from matplotlib import pyplot as plt
 
 GRAYSCALE = 1
 RGB = 2
@@ -238,6 +239,7 @@ def read_image(filename, representation):
 
 
 if __name__ == '__main__':
-    change_rate("external/aria_4kHz.wav", 1.25)
-    change_samples("external/aria_4kHz.wav", 1.25)
-
+    pass
+    # x = DFT2(np.array([[5,10],[2,3]]))
+    # change_rate("external/aria_4kHz.wav", 1.5)
+    # change_samples("external/aria_4kHz.wav", 1.5)
