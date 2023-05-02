@@ -1,11 +1,11 @@
 import os
 import sol4
 import time
-
+from PanoramicVideoGenerator import *
 
 def main():
     is_bonus = False
-    experiments = ['campus.mp4']
+    experiments = ['boat.mp4']
 
     for experiment in experiments:
         exp_no_ext = experiment.split('.')[0]
@@ -16,8 +16,7 @@ def main():
 
         s = time.time()
 
-        panorama_generator = sol4.PanoramicVideoGenerator(os.path.join('dump', '%s') % exp_no_ext, exp_no_ext, 2100,
-                                                          bonus=is_bonus)
+        panorama_generator = PanoramicVideoGenerator(os.path.join('dump', '%s') % exp_no_ext, exp_no_ext, 2100, bonus=is_bonus)
         panorama_generator.align_images(translation_only=True)
         panorama_generator.generate_panoramic_images(9)
         print(' time for %s: %.1f' % (exp_no_ext, time.time() - s))
