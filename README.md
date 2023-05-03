@@ -18,3 +18,5 @@ scipy==1.9.3
 ### Exercise 3| [Image Pyramids & Pyramid Blending](https://github.com/idopinto/Image-Processing/tree/main/Ex3-Image%20Pyramids%20%26%20Pyramid%20Blending)
 
 ### Exercise 4| [Panorama Registration & Stitching](https://github.com/idopinto/Image-Processing/tree/main/Ex4-Panorama%20Registration%20%26%20Stitching)
+
+### Exercise 5| [Deep Learning - Deep Style Image Prior](https://github.com/idopinto/Image-Processing/tree/main/Ex5-DL-Deep%20Style%20Image%20Prior)
