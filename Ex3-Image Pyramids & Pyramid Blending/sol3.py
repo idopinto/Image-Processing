@@ -169,14 +169,20 @@ def pyramid_blending(im1, im2, mask, max_levels, filter_size_im,
     """
     # Construct Laplacian pyramids L1,L2
     L1, filter_vec1 = build_laplacian_pyramid(im1, max_levels, filter_size_im)
+    # display_pyramid(pyr=L1,levels=max_levels)
+
     L2, filter_vec2 = build_laplacian_pyramid(im2, max_levels, filter_size_im)
+    # display_pyramid(pyr=L2,levels=max_levels)
     # Construct Gaussian pyramid Gm for the provided mask
     G_mask, filter_vec_mask = build_gaussian_pyramid(mask.astype(np.float64), max_levels, filter_size_mask)
+    # display_pyramid(pyr=G_mask,levels=max_levels)
     coeff = [1] * max_levels
     L_out = []
     # Construct the Laplacian pyramid L_out of the blended image for each level k by:
     for k in range(len(L1)):
         L_out.append(G_mask[k] * L1[k] + (1 - G_mask[k]) * L2[k])
+    # display_pyramid(pyr=L_out,levels=max_levels)
+
     # Reconstruct the resulting blended image from the Laplacian pyramid L_out
     return np.clip(laplacian_to_image(L_out, filter_vec1, coeff), 0, 1)
 
