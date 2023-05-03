@@ -17,4 +17,4 @@ scipy==1.9.3
 
 ### Exercise 3| [Image Pyramids & Pyramid Blending](https://github.com/idopinto/Image-Processing/tree/8483e07e4b68efbf92ecf85c356a8c0dd42669b3/Ex3-Image%20Pyramids%20%26%20Pyramid%20Blending)
 
-### Exercise 4| [Panorama Registration & Stitching](https://github.com/idopinto/Image-Processing/tree/8483e07e4b68efbf92ecf85c356a8c0dd42669b3/Ex4-Panorama%20Registration%20%26%20Stitching)
+### Exercise 4| [Panorama Registration & Stitching](https://github.com/idopinto/Image-Processing/tree/9d24229acaee0e26d3ac59f27f4ba1f41bb2d915/Ex4-Panorama%20Registration%20%26%20Stitching)
