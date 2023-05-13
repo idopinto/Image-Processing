@@ -242,21 +242,21 @@ def read_image(filename, representation):
 
 if __name__ == '__main__':
     # x = DFT2(np.array([[5,10],[2,3]]))
-    change_rate("external/aria_4kHz.wav", 2)
-    change_samples("external/aria_4kHz.wav", 2)
+    # change_rate("external/aria_4kHz.wav", 2)
+    # change_samples("external/aria_4kHz.wav", 2)
+    #
+    #
+    # sr, audio_data = wavfile.read("external/aria_4kHz.wav")
+    # resized_data1 = resize_spectrogram(audio_data,2)
+    # resized_data2 = resize_vocoder(audio_data,2)
+    # wavfile.write("results/audio/spectogram_only.wav", sr, resized_data1)
+    # wavfile.write("results/audio/with_vocoder.wav", sr, resized_data2)
 
 
-    sr, audio_data = wavfile.read("external/aria_4kHz.wav")
-    resized_data1 = resize_spectrogram(audio_data,2)
-    resized_data2 = resize_vocoder(audio_data,2)
-    wavfile.write("results/audio/spectogram_only.wav", sr, resized_data1)
-    wavfile.write("results/audio/with_vocoder.wav", sr, resized_data2)
-
-
-    # img = read_image("monkey.jpg", 1)
+    img = read_image("monkey.jpg", 1)
 
     # f_der = fourier_der(img)
-    # c_der = conv_der(img)
+    c_der = conv_der(img)
 
     # plt.imshow(img, cmap='gray')
     # plt.title("Original Image")
@@ -265,7 +265,7 @@ if __name__ == '__main__':
     # plt.imshow(f_der, cmap='gray')
     # plt.title("Magnitude of fourier derivative")
     # plt.show()
-    #
-    # plt.imshow(c_der, cmap='gray')
-    # plt.title("Magnitude of convolution derivative")
-    # plt.show()
+
+    plt.imshow(c_der, cmap='gray')
+    plt.title("Magnitude of convolution derivative")
+    plt.show()
