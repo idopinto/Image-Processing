@@ -12,9 +12,9 @@ MAX_PIXEL_VAL = 255.
 
 
 def get_dft_or_idft_matrix(N, idft=False):
+    """"""
     x_range_row = np.arange(0, N)
     x_range_col = np.arange(0, N).reshape(-1, 1)
-    # generate DFT matrix in size NXN
     if not idft:
         return np.exp((-2 * np.pi * 1j * x_range_row * x_range_col) / N)
     return np.exp((2 * np.pi * 1j * x_range_row * x_range_col) / N)
@@ -68,7 +68,7 @@ def change_rate(filename, ratio):
         then the new sample rate will be 5000Hz
     """
     sr, audio_data = wavfile.read(filename)
-    wavfile.write("change_rate.wav", int(ratio * sr), audio_data)
+    wavfile.write("results/audio/change_rate.wav", int(ratio * sr), audio_data)
 
 
 def change_samples(filename, ratio):
@@ -83,7 +83,7 @@ def change_samples(filename, ratio):
     if ratio == 1:
         return audio_data
     resized_audio = np.real(resize(audio_data, ratio)).astype(np.int16)
-    wavfile.write("change_samples.wav", sr, resized_audio)
+    wavfile.write("results/audio/change_samples.wav", sr, resized_audio)
     return resized_audio
 
 
@@ -102,7 +102,7 @@ def fourier_fast_forward(shifted_fourier, ratio):
     center = N // 2
     new_size = shifted_fourier.size // ratio
     start = center - new_size // 2
-    cropped_shifted_data = shifted_fourier[int(start): int(start+new_size)]
+    cropped_shifted_data = shifted_fourier[int(start): int(start + new_size)]
     return IDFT(np.fft.ifftshift(cropped_shifted_data))
 
 
@@ -157,8 +157,10 @@ def fourier_der(im):
     rows, cols = im.shape[0], im.shape[1]
     shifted_F = np.fft.fftshift(DFT2(im))
     dx = IDFT2(np.fft.ifftshift(shifted_F * (2 * np.pi * 1j / cols) * np.arange(-cols // 2, cols // 2)))
-    dy = IDFT2(np.fft.ifftshift(shifted_F * (2 * np.pi * 1j / rows) * (np.arange(-rows // 2, rows // 2)).reshape(-1, 1)))
+    dy = IDFT2(
+        np.fft.ifftshift(shifted_F * (2 * np.pi * 1j / rows) * (np.arange(-rows // 2, rows // 2)).reshape(-1, 1)))
     return np.sqrt(np.abs(dx) ** 2 + np.abs(dy) ** 2)
+
 
 def stft(y, win_length=640, hop_length=160):
     fft_window = signal.windows.hann(win_length, False)
@@ -239,7 +241,31 @@ def read_image(filename, representation):
 
 
 if __name__ == '__main__':
-    pass
     # x = DFT2(np.array([[5,10],[2,3]]))
-    # change_rate("external/aria_4kHz.wav", 1.5)
-    # change_samples("external/aria_4kHz.wav", 1.5)
+    change_rate("external/aria_4kHz.wav", 2)
+    change_samples("external/aria_4kHz.wav", 2)
+
+
+    sr, audio_data = wavfile.read("external/aria_4kHz.wav")
+    resized_data1 = resize_spectrogram(audio_data,2)
+    resized_data2 = resize_vocoder(audio_data,2)
+    wavfile.write("results/audio/spectogram_only.wav", sr, resized_data1)
+    wavfile.write("results/audio/with_vocoder.wav", sr, resized_data2)
+
+
+    # img = read_image("monkey.jpg", 1)
+
+    # f_der = fourier_der(img)
+    # c_der = conv_der(img)
+
+    # plt.imshow(img, cmap='gray')
+    # plt.title("Original Image")
+    # plt.show()
+    #
+    # plt.imshow(f_der, cmap='gray')
+    # plt.title("Magnitude of fourier derivative")
+    # plt.show()
+    #
+    # plt.imshow(c_der, cmap='gray')
+    # plt.title("Magnitude of convolution derivative")
+    # plt.show()

@@ -51,7 +51,7 @@ def presubmit():
     print('=== Section 1.1 ===\n')
     print('DFT and IDFT')
     sys.stdout.flush()
-    filename = 'external/monkey.jpg'
+    filename = 'monkey.jpg'
     try:
         im = sol2.read_image(filename, 1)
         dft_1d = sol2.DFT(im[:, :1])

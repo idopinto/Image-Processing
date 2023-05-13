@@ -11,3 +11,13 @@ simple manipulations on sounds and images.
 • Performing sound fast forward
 
 • Performing image derivative
+
+
+[//]: # (<audio controls>)
+
+[//]: # (  <source src="/aria_4kHz.wav" type="audio/wav">)
+
+[//]: # (</audio>)
+
+[aria_4kHz.wav](external%2Faria_4kHz.wav)
+
